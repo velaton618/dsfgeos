@@ -45,7 +45,7 @@ export default function Home() {
       </header>
       <div className={s.content}>
         <div className={s.text}>
-          <h1 className={s.title}>Hebei DSF-GEOS Technology Co., Ltd</h1>
+          <h1 className={s.title}>Hebei DSF-GEOS<br/>Technology Co., Ltd</h1>
           <h2 className={s.description}>
             Hebei DSF-GEOS Technology Co., Ltd is a lorem company that helps the
             ipsum for their helpful decisions

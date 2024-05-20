@@ -4,6 +4,8 @@
 	color: var(--fg)
 
 	background-image: url('../../public/background.png')
+	background-size: cover
+	background-position: center
 
 	.header
 		display: flex
@@ -94,13 +96,40 @@
 
 			.title
 				font-size: 4rem
-				width: 56%
 				text-align: center
 				color: var(--fg-light)
 
 			.description
 				font-size: 1.5rem
-				width: 56%
+				width: 50%
 				text-align: center
 				font-weight: normal
 				color: var(--fg-dark)
+
+@media (max-width: 1300px)
+	.container
+		.header
+			.navigation
+				display: none
+
+@media (max-width: 800px)
+	.container
+		.content
+			.text
+				.title
+					font-size: 3rem
+
+				.description
+					font-size: 1.2rem
+					width: 70%
+
+@media (max-width: 500px)
+	.container
+		.content
+			.text
+				.title
+					font-size: 2rem
+
+				.description
+					font-size: 1.2rem
+					width: 70%
