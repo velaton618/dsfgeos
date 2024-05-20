@@ -1,4 +1,106 @@
 .container
-  height: 100%
-  background: var(--bg)
-  color: var(--fg)
+	height: 100%
+	background: var(--bg)
+	color: var(--fg)
+
+	background-image: url('../../public/background.png')
+
+	.header
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 1rem 5rem
+		height: 10%
+
+		.navigation
+			display: flex
+			gap: 1rem
+
+			.link
+				display: flex
+				justify-content: center
+				align-items: center
+
+				a
+					color: var(--fg)
+					text-decoration: none
+
+					transition: 0.3s all
+
+				&:hover
+					a
+						color: var(--fg-dark)
+
+		.search
+			display: flex
+			justify-content: center
+			align-items: center
+
+			width: 15rem
+			height: 2rem
+
+			background: var(--bg)
+			padding: 0rem 0.6rem
+			border-radius: 0.6rem
+
+			input
+				width: 100%
+				background: inherit
+				outline: none
+				border: none
+				color: var(--fg)
+
+			.icon
+				color: var(--fg-dark)
+				cursor: pointer
+
+	.content
+		padding-top: 12vh
+		height: 90%
+		width: 100%
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		gap: 12vh
+
+		@keyframes MoveUpDown
+			0%, 100%
+				transform: translateY(0)
+
+			50%
+				transform: translateY(-0.4rem)
+
+		.icon
+			animation: MoveUpDown 2s linear infinite
+
+			svg
+				path
+					transition: 0.3s all
+
+			&:hover
+				animation-play-state: paused
+
+				svg
+					path
+						stroke: var(--fg-dark)
+
+		.text
+			display: flex
+			justify-content: center
+			align-items: center
+			flex-direction: column
+			gap: 0.4rem
+
+			.title
+				font-size: 4rem
+				width: 56%
+				text-align: center
+				color: var(--fg-light)
+
+			.description
+				font-size: 1.5rem
+				width: 56%
+				text-align: center
+				font-weight: normal
+				color: var(--fg-dark)
