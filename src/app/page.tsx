@@ -92,7 +92,7 @@ export default function Home() {
             <p
               className={s.inner}
               onClick={() => openLink(NavLink.Technology)}
-              onMouseEnter={() => openLink(NavLink.Technology, true)}
+              onMouseOver={() => openLink(NavLink.Technology, true)}
             >
               Technology <ChevronDown strokeWidth={1} />
             </p>
@@ -114,7 +114,7 @@ export default function Home() {
             <div
               className={s.inner}
               onClick={() => openLink(NavLink.Service)}
-              onMouseEnter={() => openLink(NavLink.Service, true)}
+              onMouseOver={() => openLink(NavLink.Service, true)}
             >
               <Link href="#">Service</Link>
               <ChevronDown strokeWidth={1} />
@@ -132,7 +132,7 @@ export default function Home() {
             <div
               className={s.inner}
               onClick={() => openLink(NavLink.Projects)}
-              onMouseEnter={() => openLink(NavLink.Projects, true)}
+              onMouseOver={() => openLink(NavLink.Projects, true)}
             >
               <Link href="#">Projects</Link>
               <ChevronDown strokeWidth={1} />
@@ -149,7 +149,7 @@ export default function Home() {
             <div
               className={s.inner}
               onClick={() => openLink(NavLink.ScientificResearch)}
-              onMouseEnter={() => openLink(NavLink.ScientificResearch, true)}
+              onMouseOver={() => openLink(NavLink.ScientificResearch, true)}
             >
               <Link href="#">Scientific research</Link>
               <ChevronDown strokeWidth={1} />
@@ -167,7 +167,7 @@ export default function Home() {
             <div
               className={s.inner}
               onClick={() => openLink(NavLink.Equipment)}
-              onMouseEnter={() => openLink(NavLink.Equipment, true)}
+              onMouseOver={() => openLink(NavLink.Equipment, true)}
             >
               <Link href="#">Equipment</Link>
               <ChevronDown strokeWidth={1} />
@@ -185,7 +185,7 @@ export default function Home() {
             <div
               className={s.inner}
               onClick={() => openLink(NavLink.Documents)}
-              onMouseEnter={() => openLink(NavLink.Documents, true)}
+              onMouseOver={() => openLink(NavLink.Documents, true)}
             >
               <Link href="#">Documents</Link>
               <ChevronDown strokeWidth={1} />
