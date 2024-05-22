@@ -11,6 +11,7 @@ import {
   X,
 } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,31 +24,52 @@ export default function Home() {
         </div>
         <nav className={s.navigation}>
           <div className={s.link}>
-            <a href="#">Technology</a>
-            <ChevronDown strokeWidth={1} />
+            <p className={s.inner}>
+              Technology <ChevronDown strokeWidth={1} />
+            </p>
+
+            <div className={s.links}>
+              <Link href="#">Technology GPTS</Link>
+              <Link href="#">Technology DBCI</Link>
+              <Link href="#">Conferences GPTS</Link>
+              <Link href="#">Conferences DBCI</Link>
+              <Link href="#">About Company</Link>
+              <Link href="#">Project Geography</Link>
+              <Link href="#">Contacts</Link>
+            </div>
           </div>
           <div className={s.link}>
-            <a href="#">Service</a>
-            <ChevronDown strokeWidth={1} />
+            <div className={s.inner}>
+              <Link href="#">Service</Link>
+              <ChevronDown strokeWidth={1} />
+            </div>
           </div>
           <div className={s.link}>
-            <a href="#">Projects</a>
-            <ChevronDown strokeWidth={1} />
+            <div className={s.inner}>
+              <Link href="#">Projects</Link>
+              <ChevronDown strokeWidth={1} />
+            </div>
           </div>
           <div className={s.link}>
-            <a href="#">Scientific research</a>
-            <ChevronDown strokeWidth={1} />
+            <div className={s.inner}>
+              <Link href="#">Scientific research</Link>
+              <ChevronDown strokeWidth={1} />
+            </div>
           </div>
           <div className={s.link}>
-            <a href="#">Equipment</a>
-            <ChevronDown strokeWidth={1} />
+            <div className={s.inner}>
+              <Link href="#">Equipment</Link>
+              <ChevronDown strokeWidth={1} />
+            </div>
           </div>
           <div className={s.link}>
-            <a href="#">Documents</a>
-            <ChevronDown strokeWidth={1} />
+            <div className={s.inner}>
+              <Link href="#">Documents</Link>
+              <ChevronDown strokeWidth={1} />
+            </div>
           </div>
           <div className={s.link}>
-            <a href="#">News</a>
+            <Link href="#">News</Link>
           </div>
         </nav>
         <div className={s.search}>
@@ -73,31 +95,33 @@ export default function Home() {
           </div>
           <nav className={s.navigation}>
             <div className={s.link}>
-              <a href="#">Technology</a>
+              <Link href="#">Technology</Link>
               <ChevronDown strokeWidth={1} />
             </div>
             <div className={s.link}>
-              <a href="#">Service</a>
+              <Link href="#">Service</Link>
               <ChevronDown strokeWidth={1} />
             </div>
             <div className={s.link}>
-              <a href="#">Projects</a>
+              <Link href="#">Projects</Link>
               <ChevronDown strokeWidth={1} />
             </div>
             <div className={s.link}>
-              <a href="#">Scientific research</a>
+              <Link href="#">Scientific research</Link>
               <ChevronDown strokeWidth={1} />
             </div>
             <div className={s.link}>
-              <a href="#">Equipment</a>
+              <Link href="#">Equipment</Link>
               <ChevronDown strokeWidth={1} />
             </div>
             <div className={s.link}>
-              <a href="#">Documents</a>
+              <Link href="#">Documents</Link>
               <ChevronDown strokeWidth={1} />
             </div>
             <div className={s.link}>
-              <a href="#">News</a>
+              <div className={s.inner}>
+                <Link href="#">News</Link>
+              </div>
             </div>
           </nav>
         </div>
@@ -110,10 +134,11 @@ export default function Home() {
             Technology Co., Ltd
           </h1>
           <h2 className={s.description}>
-          Unveiling Earth's Hidden Treasures: Revolutionize Exploration with GPTS Technology
+            Unveiling Earth's Hidden Treasures: Revolutionize Exploration with
+            GPTS Technology
           </h2>
         </div>
-        <a className={s.icon} href="#first-section">
+        <Link className={s.icon} href="#first-section">
           <svg
             width="46"
             height="25"
@@ -129,7 +154,7 @@ export default function Home() {
               strokeLinejoin="round"
             />
           </svg>
-        </a>
+        </Link>
       </section>
       <div className={s.spacer} id="first-section" />
       <section className={s.time}>
@@ -210,8 +235,8 @@ export default function Home() {
             <p>Adress: China, Hebei, Zhangjiakou, 河北帝斯杰奥科技有限公司</p>
           </div>
           <p className={s.copyright}>
-            © Copyright 2019-{new Date().getFullYear()}, Hebei DSF-GEOS Technology Co., Ltd. All
-            rights reserved.
+            © Copyright 2019-{new Date().getFullYear()}, Hebei DSF-GEOS
+            Technology Co., Ltd. All rights reserved.
           </p>
         </div>
         <Image alt="logo" width={48} height={48} src={"/logo2.png"} />
