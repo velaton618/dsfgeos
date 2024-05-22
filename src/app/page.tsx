@@ -210,7 +210,7 @@ export default function Home() {
             <p>Adress: China, Hebei, Zhangjiakou, 河北帝斯杰奥科技有限公司</p>
           </div>
           <p className={s.copyright}>
-            © Copyright 2019-2024 2024, Hebei DSF-GEOS Technology Co., Ltd. All
+            © Copyright 2019-{new Date().getFullYear()}, Hebei DSF-GEOS Technology Co., Ltd. All
             rights reserved.
           </p>
         </div>
