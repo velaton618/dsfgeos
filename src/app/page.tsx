@@ -114,7 +114,7 @@ export default function Home() {
             ipsum for their helpful decisions
           </h2>
         </div>
-        <div className={s.icon}>
+        <a className={s.icon} href="#first-section">
           <svg
             width="46"
             height="25"
@@ -130,9 +130,9 @@ export default function Home() {
               strokeLinejoin="round"
             />
           </svg>
-        </div>
+        </a>
       </section>
-      <div className={s.spacer} />
+      <div className={s.spacer} id="first-section" />
       <section className={s.time}>
         <Image
           alt="time"
