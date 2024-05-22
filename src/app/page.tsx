@@ -10,7 +10,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 enum NavLink {
@@ -32,6 +32,24 @@ export default function Home() {
   const [isScientificResearch, setIsScientificResearch] = useState(false);
   const [isEquipment, setIsEquipment] = useState(false);
   const [isDocuments, setIsDocuments] = useState(false);
+  const [isBlur, setIsBlur] = useState(false);
+  const container = useRef(null);
+
+  useEffect(() => {
+    function handleScroll() {
+      const element = container.current as any;
+
+      if (element.scrollTop > 0 && window.innerWidth > 1300) {
+        setIsBlur(true);
+      } else {
+        setIsBlur(false);
+      }
+    }
+    document.body.addEventListener("scroll", handleScroll, { passive: true, capture: true});
+    return () => {
+      document.body.removeEventListener("scroll", handleScroll);
+    }
+}, []);
 
   const closeOtherLinks = (active: NavLink) => {
     if (active !== NavLink.Technology) {
@@ -82,8 +100,8 @@ export default function Home() {
   };
 
   return (
-    <div className={s.container}>
-      <header className={s.header}>
+    <div className={s.container} ref={container}>
+      <header className={`${s.header} ${isBlur ? s.blur : ""}`}>
         <div className={s.logo}>
           <Image alt="logo" src="/logo.png" width={50} height={44} />
         </div>

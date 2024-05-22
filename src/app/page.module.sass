@@ -83,7 +83,7 @@
 
 					.inner
 						display: flex
-						
+
 						@media (hover: hover)
 							&:hover
 								a
@@ -103,6 +103,17 @@
 		align-items: center
 		padding: 1rem 5rem
 		height: 10%
+
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%
+
+		z-index: 2000
+
+		&.blur
+			background: rgba(0, 0, 0, 0.2)
+			backdrop-filter: blur(10px)
 
 		.navigation
 			display: flex
@@ -149,12 +160,12 @@
 					left: 0
 					display: flex
 
-					// Disable any interaction
 					pointer-events: none
 
-					margin-top: 2rem
+					margin-top: 2.5rem
 					padding: 2rem
 					background: var(--bg)
+					border: 2px solid var(--bg-light)
 
 					border-radius: 0.6rem
 					flex-direction: column
@@ -446,6 +457,7 @@
 	.container
 		.header
 			padding: 1rem 2rem
+
 			.navigation
 				display: none
 
