@@ -228,28 +228,40 @@ export default function Home() {
           </div>
           <nav className={s.navigation}>
             <div className={s.link}>
-              <Link href="#">Technology</Link>
-              <ChevronDown strokeWidth={1} />
+              <div className={s.inner}>
+                <Link href="#">Technology</Link>
+                <ChevronDown strokeWidth={1} />
+              </div>
             </div>
             <div className={s.link}>
-              <Link href="#">Service</Link>
-              <ChevronDown strokeWidth={1} />
+              <div className={s.inner}>
+                <Link href="#">Service</Link>
+                <ChevronDown strokeWidth={1} />
+              </div>
             </div>
             <div className={s.link}>
-              <Link href="#">Projects</Link>
-              <ChevronDown strokeWidth={1} />
+              <div className={s.inner}>
+                <Link href="#">Projects</Link>
+                <ChevronDown strokeWidth={1} />
+              </div>
             </div>
             <div className={s.link}>
-              <Link href="#">Scientific research</Link>
-              <ChevronDown strokeWidth={1} />
+              <div className={s.inner}>
+                <Link href="#">Scientific research</Link>
+                <ChevronDown strokeWidth={1} />
+              </div>
             </div>
             <div className={s.link}>
-              <Link href="#">Equipment</Link>
-              <ChevronDown strokeWidth={1} />
+              <div className={s.inner}>
+                <Link href="#">Equipment</Link>
+                <ChevronDown strokeWidth={1} />
+              </div>
             </div>
             <div className={s.link}>
-              <Link href="#">Documents</Link>
-              <ChevronDown strokeWidth={1} />
+              <div className={s.inner}>
+                <Link href="#">Documents</Link>
+                <ChevronDown strokeWidth={1} />
+              </div>
             </div>
             <div className={s.link}>
               <div className={s.inner}>
