@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "DSF-GEOS",
   description: "Unveiling Earth's Hidden Treasures: Revolutionize Exploration with GPTS Technology",
   openGraph: {
-    images: '/logo.png',
+    images: 'https://dsfgeos-dlou3sfoc-uaquaxs-projects.vercel.app/logo.png',
   }
 };
 
