@@ -110,8 +110,7 @@ export default function Home() {
             Technology Co., Ltd
           </h1>
           <h2 className={s.description}>
-            Hebei DSF-GEOS Technology Co., Ltd is a lorem company that helps the
-            ipsum for their helpful decisions
+          Unveiling Earth's Hidden Treasures: Revolutionize Exploration with GPTS Technology
           </h2>
         </div>
         <a className={s.icon} href="#first-section">
