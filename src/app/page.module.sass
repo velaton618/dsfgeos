@@ -192,6 +192,7 @@
 				align-items: center
 				gap: 0.4rem
 				font-size: 52px
+				white-space: nowrap
 
 			.description
 				font-size: 18
@@ -212,7 +213,6 @@
 			height: 50vh
 
 		.text
-			padding: 0 5rem
 			display: flex
 			flex-direction: column
 			gap: 2rem
@@ -222,7 +222,7 @@
 				align-items: center
 				gap: 0.4rem
 				font-size: 52px
-				width: 38vw
+				white-space: nowrap
 
 			.description
 				font-size: 18
@@ -232,8 +232,9 @@
 		height: 15vh
 		background: var(--bg-light)
 		display: flex
-		justify-content: space-around
+		justify-content: space-between
 		align-items: center
+		padding: 0rem 5rem
 
 		.text
 			display: flex
@@ -252,12 +253,20 @@
 				color: var(--fg-dark)
 				font-size: 1rem
 
+/* --- HEADER --- */
 @media (max-width: 1300px)
 	.container
 		.header
 			.navigation
 				display: none
 
+			.search
+				display: none
+
+			.logo
+				display: none
+
+/* --- MAIN --- */
 @media (max-width: 800px)
 	.container
 		.main
@@ -279,3 +288,221 @@
 				.description
 					font-size: 1.2rem
 					width: 70%
+
+/* --- SAVE TIME --- */
+@media (max-width: 860px)
+	.container
+		.time
+			.text
+				.title
+					font-size: 2.5rem
+
+				.description
+					font-size: 1rem
+
+@media (max-width: 805px)
+	.container
+		.time
+			.text
+				.title
+					font-size: 2rem
+
+				.description
+					font-size: 0.8rem
+
+@media (max-width: 770px)
+	.container
+		.time
+			.image
+				display: none
+
+			.text
+				.title
+					justify-content: center
+
+				.description
+					text-align: center
+
+/* --- MINERAL --- */
+@media (max-width: 800px)
+	.container
+		.mineral
+			.text
+				.title
+					font-size: 2.5rem
+
+				.description
+					font-size: 1rem
+
+@media (max-width: 650px)
+	.container
+		.mineral
+			.text
+				.title
+					font-size: 1.8rem
+
+				.description
+					font-size: 0.8rem
+
+			.background
+				width: 150vw
+				.imageUp
+					width: 150vw
+
+				.imageDown
+					width: 150vw
+
+
+@media (max-width: 400px)
+	.container
+		.mineral
+			.text
+				.title
+					font-size: 1.5rem
+
+				.description
+					font-size: 0.7rem
+
+			.background
+				width: 180vw
+				.imageUp
+					width: 180vw
+
+				.imageDown
+					width: 180vw
+
+/* --- INVESTMEN --- */
+@media (max-width: 1150px)
+	.container
+		.investment
+			gap: 1rem
+			.text
+				.title
+					width: 50%
+					font-size: 2.5rem
+
+				.description
+					width: 100%
+					font-size: 0.9rem
+
+@media (max-width: 1000px)
+	.container
+		.investment
+			.text
+				.title
+					width: 50%
+					font-size: 2rem
+
+				.description
+					width: 100%
+					font-size: 0.9rem
+
+@media (max-width: 950px)
+	.container
+		.investment
+			.text
+				.title
+					white-space: normal
+
+@media (max-width: 880px)
+	.container
+		.investment
+			.text
+				.title
+					font-size: 1.8rem
+
+				.description
+					width: 120%
+					font-size: 0.8rem
+
+@media (max-width: 815px)
+	.container
+		.investment
+			.text
+				.title
+					font-size: 1.6rem
+					white-space: nowrap!important
+
+				.description
+					width: 100%
+					font-size: 0.8rem
+
+			.image
+				height: 40vh
+
+@media (max-width: 780px)
+	.container
+		.investment
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+
+			.text
+				text-align: center
+				display: flex
+				justify-content: center
+				align-items: center
+
+				.title
+					text-align: center
+					width: 100%
+					display: flex
+					justify-content: center
+
+@media (max-width: 410px)
+	.container
+		.investment
+			.image
+				height: 30vh
+
+/* --- FOOTER --- */
+@media (max-width: 950px)
+	.container
+		.footer
+			height: 30vh
+			.text
+				.info
+					width: 50%
+					display: flex
+					flex-direction: column
+					gap: 0.2rem
+					align-items: start
+
+				.copyright
+					width: 70%
+					text-align: center
+
+@media (max-width: 740px)
+	.container
+		.footer
+			height: 35vh
+			.text
+				.info
+					width: 50%
+					display: flex
+					flex-direction: column
+					gap: 0.2rem
+					align-items: start
+
+				.copyright
+					width: 70%
+					text-align: center
+@media (max-width: 600px)
+	.container
+		.footer
+			height: 30vh
+			.text
+				.info
+					font-size: 0.8rem
+
+				.copyright
+					font-size: 0.6rem
+
+@media (max-width: 500px)
+	.container
+		.footer
+			flex-direction: column
+			height: auto
+			padding: 2rem 0rem
+			gap: 2rem

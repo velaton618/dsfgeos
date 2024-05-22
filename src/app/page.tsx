@@ -103,12 +103,14 @@ export default function Home() {
             width={100}
             height={100}
             className={s.imageUp}
+            layout="responsive"
           />
           <Image
             alt="mountains-bottom"
             src={"/mountains.png"}
             width={100}
             height={100}
+            layout="responsive"
             className={s.imageDown}
           />
         </div>
@@ -145,9 +147,9 @@ export default function Home() {
         <Image alt="logo" width={48} height={48} src={"/logo.png"} />
         <div className={s.text}>
           <p className={s.info}>
-            Email: geopolariton@dsfgeos.cn
+            <p>Email: geopolariton@dsfgeos.cn</p>
             <br />
-            Adress: China, Hebei, Zhangjiakou, 河北帝斯杰奥科技有限公司
+            <p>Adress: China, Hebei, Zhangjiakou, 河北帝斯杰奥科技有限公司</p>
           </p>
           <p className={s.copyright}>
             © Copyright 2019-2024 2024, Hebei DSF-GEOS Technology Co., Ltd. All
