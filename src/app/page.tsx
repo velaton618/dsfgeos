@@ -1,6 +1,6 @@
 import Image from "next/image";
 import s from "./page.module.sass";
-import { Search, ChevronDown } from "lucide-react";
+import { Search, ChevronDown, Hourglass, MountainIcon } from "lucide-react";
 
 export default function Home() {
   return (
@@ -43,9 +43,13 @@ export default function Home() {
           <Search className={s.icon} strokeWidth={1} />
         </div>
       </header>
-      <div className={s.content}>
+      <section className={s.main}>
         <div className={s.text}>
-          <h1 className={s.title}>Hebei DSF-GEOS<br/>Technology Co., Ltd</h1>
+          <h1 className={s.title}>
+            Hebei DSF-GEOS
+            <br />
+            Technology Co., Ltd
+          </h1>
           <h2 className={s.description}>
             Hebei DSF-GEOS Technology Co., Ltd is a lorem company that helps the
             ipsum for their helpful decisions
@@ -68,7 +72,90 @@ export default function Home() {
             />
           </svg>
         </div>
-      </div>
+      </section>
+      <div className={s.spacer} />
+      <section className={s.time}>
+        <Image
+          alt="time"
+          src={"/time.png"}
+          width={100}
+          height={100}
+          className={s.image}
+        />
+        <div className={s.text}>
+          <h1 className={s.title}>
+            Save time
+            <Hourglass size={32} />
+          </h1>
+          <p className={s.description}>
+            USING THE "GPTS" TECHNOLOGY WILL ALLOW IN A MINIMUM TIME  TO
+            DRASTICALLY LESSEN ALL FINANCIAL RISKS OF PROJECT WHILE CONFIRMING
+            DEPOSITS OF CARBOHYDRONS
+          </p>
+        </div>
+      </section>
+      <div className={s.spacer} />
+      <section className={s.mineral}>
+        <div className={s.background}>
+          <Image
+            alt="mountains-top"
+            src={"/mountains.png"}
+            width={100}
+            height={100}
+            className={s.imageUp}
+          />
+          <Image
+            alt="mountains-bottom"
+            src={"/mountains.png"}
+            width={100}
+            height={100}
+            className={s.imageDown}
+          />
+        </div>
+        <div className={s.text}>
+          <h1 className={s.title}>
+            <MountainIcon size={32} />
+            Early Mineral insights
+          </h1>
+          <p className={s.description}>
+            GETTING EXPRESS EVALUATION OF PERSPECTIVES OF MINERAL RESOURCES
+            DEVELOPMENT ON EARLY STAGES OF GEOLOGICAL AND GEOPHYSICAL WORKS WILL
+            HELP IN ADOPTING RIGHT DECISION
+          </p>
+        </div>
+      </section>
+      <section className={s.investment}>
+        <div className={s.text}>
+          <h1 className={s.title}>Clearer Investments</h1>
+          <p className={s.description}>
+            HAVING MAPS OF OIL FIELDS AND DEPOSITS OF NATURAL GASSES MARKED ON A
+            MAP WILL ALLOW US TO MAKE A CLEARER JUDGEMENT WHEN ASSESSING THE
+            PROJECT AND HOW MUCH INVESTMENT INTO THE PROJECT IS REQUIRED
+          </p>
+        </div>
+        <Image
+          alt="oil field"
+          src={"/oil.png"}
+          width={100}
+          height={100}
+          className={s.image}
+        />
+      </section>
+      <footer className={s.footer}>
+        <Image alt="logo" width={48} height={48} src={"/logo.png"} />
+        <div className={s.text}>
+          <p className={s.info}>
+            Email: geopolariton@dsfgeos.cn
+            <br />
+            Adress: China, Hebei, Zhangjiakou, 河北帝斯杰奥科技有限公司
+          </p>
+          <p className={s.copyright}>
+            © Copyright 2019-2024 2024, Hebei DSF-GEOS Technology Co., Ltd. All
+            rights reserved.
+          </p>
+        </div>
+        <Image alt="logo" width={48} height={48} src={"/logo2.png"} />
+      </footer>
     </div>
   );
 }

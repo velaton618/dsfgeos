@@ -1,11 +1,14 @@
 .container
 	height: 100%
+	width: 100%
 	background: var(--bg)
 	color: var(--fg)
 
 	background-image: url('../../public/background.png')
 	background-size: cover
 	background-position: center
+
+	overflow-x: hidden
 
 	.header
 		display: flex
@@ -56,7 +59,11 @@
 				color: var(--fg-dark)
 				cursor: pointer
 
-	.content
+	.spacer
+		height: 50vh
+		background: var(--bg)
+
+	.main
 		padding-top: 12vh
 		height: 90%
 		width: 100%
@@ -106,6 +113,145 @@
 				font-weight: normal
 				color: var(--fg-dark)
 
+	.time
+		background: var(--bg)
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		.image
+			width: auto
+			height: 100vh
+
+		.text
+			padding: 0 5rem
+			display: flex
+			flex-direction: column
+			gap: 2rem
+
+			.title
+				display: flex
+				align-items: center
+				gap: 0.4rem
+				font-size: 52px
+
+			.description
+				font-size: 18
+				color: var(--fg-dark)
+
+	.mineral
+		position: relative
+		height: 100vh
+		background: var(--bg)
+		display: flex
+		justify-content: space-between
+		align-items: center
+		background: linear-gradient(to left, #FFFFFF, #F0F0F0)
+
+		.background
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100vh
+			background: var(--bg)
+
+			.imageUp
+				background: none
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 70vh
+				transform: rotate(180deg)
+
+			.imageDown
+				background: none
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 100%
+				height: 70vh
+
+		.text
+			display: flex
+			justify-content: center
+			align-items: center
+			position: absolute
+			top: 0
+			left: 0
+			width: 100vw
+			height: 100vh
+			padding: 0 5rem
+			display: flex
+			flex-direction: column
+			gap: 2rem
+
+			.title
+				display: flex
+				align-items: center
+				gap: 0.4rem
+				font-size: 52px
+
+			.description
+				font-size: 18
+				color: var(--fg-dark)
+				text-align: center
+				width: 50vw
+
+	.investment
+		background: var(--bg)
+		display: flex
+		justify-content: space-between
+		align-items: center
+		height: 100vh
+		padding: 0 5rem
+
+		.image
+			width: auto
+			height: 50vh
+
+		.text
+			padding: 0 5rem
+			display: flex
+			flex-direction: column
+			gap: 2rem
+
+			.title
+				display: flex
+				align-items: center
+				gap: 0.4rem
+				font-size: 52px
+				width: 38vw
+
+			.description
+				font-size: 18
+				color: var(--fg-dark)
+
+	.footer
+		height: 15vh
+		background: var(--bg-light)
+		display: flex
+		justify-content: space-around
+		align-items: center
+
+		.text
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			gap: 1rem
+
+			.info
+				width: 100%
+				display: flex
+				justify-content: center
+				align-items: center
+
+			.copyright
+				color: var(--fg-dark)
+				font-size: 1rem
+
 @media (max-width: 1300px)
 	.container
 		.header
@@ -114,7 +260,7 @@
 
 @media (max-width: 800px)
 	.container
-		.content
+		.main
 			.text
 				.title
 					font-size: 3rem
@@ -125,7 +271,7 @@
 
 @media (max-width: 500px)
 	.container
-		.content
+		.main
 			.text
 				.title
 					font-size: 2rem
