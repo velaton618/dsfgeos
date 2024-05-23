@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Header from "@/components/Header/Header";
 import MobileHeader from "@/components/MobileHeader/MobileHeader";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -141,21 +142,7 @@ export default function Home() {
           className={s.image}
         />
       </section>
-      <footer className={s.footer}>
-        <Image alt="logo" width={48} height={48} src={"/logo.png"} />
-        <div className={s.text}>
-          <div className={s.info}>
-            <p>Email: geopolariton@dsfgeos.cn</p>
-            <br />
-            <p>Adress: China, Hebei, Zhangjiakou, 河北帝斯杰奥科技有限公司</p>
-          </div>
-          <p className={s.copyright}>
-            © Copyright 2019-{new Date().getFullYear()}, Hebei DSF-GEOS
-            Technology Co., Ltd. All rights reserved.
-          </p>
-        </div>
-        <Image alt="logo" width={48} height={48} src={"/logo2.png"} />
-      </footer>
+      <Footer/>
     </div>
   );
 }
