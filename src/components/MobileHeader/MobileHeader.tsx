@@ -66,7 +66,9 @@ function MobileHeader({ isMenuOpen }: { isMenuOpen: boolean }) {
       <div className={s.background} />
       <div className={s.content}>
         <div className={s.logo}>
-          <Image alt="logo" src="/logo.png" width={50} height={44} />
+          <Link href={"/"}>
+            <Image alt="logo" src="/logo.png" width={50} height={44} />
+          </Link>
         </div>
         <div className={s.search}>
           <input placeholder="Search..." />
