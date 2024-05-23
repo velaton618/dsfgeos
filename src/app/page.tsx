@@ -14,10 +14,7 @@ export default function Home() {
 
   return (
     <div className={s.container}>
-      <Header
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
-      />
+      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <MobileHeader isMenuOpen={isMenuOpen} />
       <section className={s.main}>
         <div className={s.text}>
@@ -49,11 +46,10 @@ export default function Home() {
           </svg>
         </Link>
       </section>
-      <div className={s.spacer} id="first-section" />
-      <section className={s.time}>
+      <section className={s.time} id="first-section">
         <Image
           alt="time"
-          src={"/time.png"}
+          src={"/test-time.png"}
           width={100}
           height={100}
           className={s.image}
@@ -70,7 +66,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <div className={s.spacer} />
       <section className={s.mineral}>
         <div className={s.background}>
           <Image
@@ -119,7 +114,7 @@ export default function Home() {
           className={s.image}
         />
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

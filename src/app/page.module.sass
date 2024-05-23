@@ -74,14 +74,20 @@
 				color: var(--fg-dark)
 
 	.time
+		position: relative
 		background: var(--bg)
 		display: flex
 		justify-content: space-between
 		align-items: center
+		height: 100vh
 
 		.image
-			width: auto
+			position: absolute
+			top: 0
+			left: 0
+			opacity: 0.1
 			height: 100vh
+			width: 100vw
 
 		.text
 			padding: 0 5rem
@@ -235,9 +241,6 @@
 @media (max-width: 770px)
 	.container
 		.time
-			.image
-				display: none
-
 			.text
 				.title
 					justify-content: center
