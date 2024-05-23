@@ -4,7 +4,17 @@
 	align-items: center
 	padding: 1rem 5rem
 	height: 10%
+
+	position: fixed
+	top: 0
+	left: 0
 	width: 100%
+
+	z-index: 2000
+
+	&.blur
+		background: rgba(0, 0, 0, 0.2)
+		backdrop-filter: blur(10px)
 
 	.navigation
 		display: flex
@@ -24,127 +34,130 @@
 
 				transition: 0.3s all
 
-				.inner
-					display: flex
-					justify-content: center
-					align-items: center
+			.inner
+				display: flex
+				justify-content: center
+				align-items: center
 
-					transition: 0.3s all
+				transition: 0.3s all
 
-					@media (hover: hover)
-						&:hover
-							color: var(--fg-dark)
-
-							a
-								color: var(--fg-dark)
-
-					@media (hover: none)
-						&:active
-							color: var(--fg-dark)
-
-							a
-								color: var(--fg-dark)
-
-				.links
-					position: absolute
-					top: 0
-					left: 0
-					display: flex
-
-					margin-top: 2rem
-					padding: 2rem
-					background: var(--bg)
-
-					border-radius: 0.6rem
-					flex-direction: column
-					gap: 1rem
-
-					opacity: 0
-
-					transition: 0.3s all
-
-					a
-						white-space: nowrap
-
-						display: flex
-						justify-content: flex-start
-						align-items: center
-
-						border: 2px solid var(--bg-light)
-						padding: 1rem
-
-						&:hover
-							background: var(--bg-light)
-
-				&.active
-					color: var(--fg-dark)
-
-					.inner
+				@media (hover: hover)
+					&:hover
 						color: var(--fg-dark)
 
-					.links
-						opacity: 1
+						a
+							color: var(--fg-dark)
 
-		.search
-			display: flex
-			justify-content: center
-			align-items: center
+				@media (hover: none)
+					&:active
+						color: var(--fg-dark)
 
-			width: 15rem
-			height: 2rem
+						a
+							color: var(--fg-dark)
 
-			background: var(--bg)
-			padding: 0rem 0.6rem
-			border-radius: 0.6rem
+			.links
+				position: absolute
+				top: 0
+				left: 0
+				display: flex
 
-			input
-				width: 100%
-				background: inherit
-				outline: none
-				border: none
-				color: var(--fg)
+				pointer-events: none
 
-			.icon
+				margin-top: 2.5rem
+				padding: 2rem
+				background: var(--bg)
+				border: 2px solid var(--bg-light)
+
+				border-radius: 0.6rem
+				flex-direction: column
+				gap: 1rem
+
+				opacity: 0
+
+				transition: 0.3s all
+
+				a
+					white-space: nowrap
+
+					display: flex
+					justify-content: flex-start
+					align-items: center
+
+					border: 2px solid var(--bg-light)
+					padding: 1rem
+
+					&:hover
+						background: var(--bg-light)
+
+			&.active
 				color: var(--fg-dark)
-				cursor: pointer
 
-		.menuBtn
-			display: none
-			border: none
+				.inner
+					color: var(--fg-dark)
+
+				.links
+					opacity: 1
+					pointer-events: all
+
+	.search
+		display: flex
+		justify-content: center
+		align-items: center
+
+		width: 15rem
+		height: 2rem
+
+		background: var(--bg)
+		padding: 0rem 0.6rem
+		border-radius: 0.6rem
+
+		input
+			width: 100%
+			background: inherit
 			outline: none
-			background: none
-
-			position: fixed
-			top: 0
-			right: 0
-			margin: 1rem
-
-			z-index: 1200
-
+			border: none
 			color: var(--fg)
+
+		.icon
+			color: var(--fg-dark)
+			cursor: pointer
+
+	.menuBtn
+		display: none
+		border: none
+		outline: none
+		background: none
+
+		position: fixed
+		top: 0
+		right: 0
+		margin: 1rem
+
+		z-index: 1200
+
+		color: var(--fg)
+		transition: all 0.3s ease-in-out
+
+		@media (hover: hover)
+			&:hover
+				color: var(--fg-dark)
+
+		@media (hover: none)
+			&:active
+				color: var(--fg-dark)
+
+		svg
 			transition: all 0.3s ease-in-out
 
-			@media (hover: hover)
-				&:hover
-					color: var(--fg-dark)
-
-			@media (hover: none)
-				&:active
-					color: var(--fg-dark)
-
-			svg
-				transition: all 0.3s ease-in-out
-
-/* --- HEADER --- */
 @media (max-width: 1300px)
-	.container
-		.header
-			padding: 1rem 2rem
-			.navigation
-				display: none
+	.header
+		padding: 1rem 2rem
 
-			.search
-				display: none
+		.navigation
+			display: none
 
-			.menuBtn
-				display: flex
+		.search
+			display: none
+
+		.menuBtn
+			display: flex

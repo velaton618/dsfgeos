@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import s from "./Header.module.sass";
 import { NavLink } from "@/models/NavLink";
 import { ChevronDown, Menu, Search, X } from "lucide-react";
@@ -9,9 +9,12 @@ import { Dispatch, SetStateAction } from "react";
 function Header({
   isMenuOpen,
   setIsMenuOpen,
+
+  isBlur
 }: {
   isMenuOpen: boolean;
   setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
+  isBlur: boolean
 }) {
   const [isTechnology, setIsTechnology] = useState(false);
   const [isService, setIsService] = useState(false);
@@ -69,7 +72,7 @@ function Header({
   };
 
   return (
-    <header className={s.header}>
+    <header className={`${s.header} ${isBlur ? s.blur : ""}`}>
       <div className={s.logo}>
         <Image alt="logo" src="/logo.png" width={50} height={44} />
       </div>
@@ -78,7 +81,7 @@ function Header({
           <p
             className={s.inner}
             onClick={() => openLink(NavLink.Technology)}
-            onMouseEnter={() => openLink(NavLink.Technology, true)}
+            onMouseOver={() => openLink(NavLink.Technology, true)}
           >
             Technology <ChevronDown strokeWidth={1} />
           </p>
@@ -100,7 +103,7 @@ function Header({
           <div
             className={s.inner}
             onClick={() => openLink(NavLink.Service)}
-            onMouseEnter={() => openLink(NavLink.Service, true)}
+            onMouseOver={() => openLink(NavLink.Service, true)}
           >
             <Link href="#">Service</Link>
             <ChevronDown strokeWidth={1} />
@@ -118,7 +121,7 @@ function Header({
           <div
             className={s.inner}
             onClick={() => openLink(NavLink.Projects)}
-            onMouseEnter={() => openLink(NavLink.Projects, true)}
+            onMouseOver={() => openLink(NavLink.Projects, true)}
           >
             <Link href="#">Projects</Link>
             <ChevronDown strokeWidth={1} />
@@ -135,7 +138,7 @@ function Header({
           <div
             className={s.inner}
             onClick={() => openLink(NavLink.ScientificResearch)}
-            onMouseEnter={() => openLink(NavLink.ScientificResearch, true)}
+            onMouseOver={() => openLink(NavLink.ScientificResearch, true)}
           >
             <Link href="#">Scientific research</Link>
             <ChevronDown strokeWidth={1} />
@@ -153,7 +156,7 @@ function Header({
           <div
             className={s.inner}
             onClick={() => openLink(NavLink.Equipment)}
-            onMouseEnter={() => openLink(NavLink.Equipment, true)}
+            onMouseOver={() => openLink(NavLink.Equipment, true)}
           >
             <Link href="#">Equipment</Link>
             <ChevronDown strokeWidth={1} />
@@ -171,7 +174,7 @@ function Header({
           <div
             className={s.inner}
             onClick={() => openLink(NavLink.Documents)}
-            onMouseEnter={() => openLink(NavLink.Documents, true)}
+            onMouseOver={() => openLink(NavLink.Documents, true)}
           >
             <Link href="#">Documents</Link>
             <ChevronDown strokeWidth={1} />
