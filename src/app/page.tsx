@@ -12,34 +12,11 @@ import Footer from "@/components/Footer/Footer";
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const [isBlur, setIsBlur] = useState(false);
-  const container = useRef(null);
-
-  useEffect(() => {
-    function handleScroll() {
-      const element = container.current as any;
-
-      if (element.scrollTop > 0 && window.innerWidth > 1300) {
-        setIsBlur(true);
-      } else {
-        setIsBlur(false);
-      }
-    }
-    document.body.addEventListener("scroll", handleScroll, {
-      passive: true,
-      capture: true,
-    });
-    return () => {
-      document.body.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <div className={s.container} ref={container}>
+    <div className={s.container}>
       <Header
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
-        isBlur={isBlur}
       />
       <MobileHeader isMenuOpen={isMenuOpen} />
       <section className={s.main}>

@@ -8,13 +8,10 @@ import { Dispatch, SetStateAction } from "react";
 
 function Header({
   isMenuOpen,
-  setIsMenuOpen,
-
-  isBlur
+  setIsMenuOpen
 }: {
   isMenuOpen: boolean;
   setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
-  isBlur: boolean
 }) {
   const [isTechnology, setIsTechnology] = useState(false);
   const [isService, setIsService] = useState(false);
@@ -72,9 +69,11 @@ function Header({
   };
 
   return (
-    <header className={`${s.header} ${isBlur ? s.blur : ""}`}>
+    <header className={s.header}>
       <div className={s.logo}>
+        <Link href={"/"}>
         <Image alt="logo" src="/logo.png" width={50} height={44} />
+        </Link>
       </div>
       <nav className={s.navigation}>
         <div className={`${s.link} ${isTechnology ? s.active : ""}`}>
@@ -90,7 +89,7 @@ function Header({
             className={s.links}
             onMouseLeave={() => openLink(NavLink.Technology, false)}
           >
-            <Link href="#">Technology GPTS</Link>
+            <Link href="/technology/gpts">Technology GPTS</Link>
             <Link href="#">Technology DBCI</Link>
             <Link href="#">Conferences GPTS</Link>
             <Link href="#">Conferences DBCI</Link>
