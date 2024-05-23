@@ -9,7 +9,7 @@ import MobileHeader from "@/components/MobileHeader/MobileHeader";
 const source = `
 # Technology - GPT
 
-<video width="auto" height="auto" controls>
+<video width="100%" height="100%" controls>
 	<source src="http://dsfgeos.cn/videos/GPTS-1.mp4" type="video/mp4">
 </video>
 
