@@ -8,7 +8,7 @@ import { Dispatch, SetStateAction } from "react";
 
 function Header({
   isMenuOpen,
-  setIsMenuOpen
+  setIsMenuOpen,
 }: {
   isMenuOpen: boolean;
   setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
@@ -72,7 +72,7 @@ function Header({
     <header className={s.header}>
       <div className={s.logo}>
         <Link href={"/"}>
-        <Image alt="logo" src="/logo.png" width={50} height={44} />
+          <Image alt="logo" src="/logo.png" width={50} height={44} />
         </Link>
       </div>
       <nav className={s.navigation}>
@@ -190,7 +190,9 @@ function Header({
           </div>
         </div>
         <div className={s.link}>
-          <Link href="#">News</Link>
+          <div className={s.inner}>
+            <Link href="#">News</Link>
+          </div>
         </div>
       </nav>
       <div className={s.search}>
