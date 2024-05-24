@@ -85,30 +85,54 @@
 			position: absolute
 			top: 0
 			left: 0
-			opacity: 0.8
+			opacity: 0.5
 			height: 100%
 			width: 100%
 
 			object-fit: cover
 
+		.droneContainer
+			position: absolute
+			top: 5vh
+			left: 0
+			z-index: 10
+			width: 100%
+			height: 100%
+			display: flex
+			justify-content: center
+
+			@keyframes MoveUpDown
+				0%, 100%
+					transform: translateY(0)
+
+				50%
+					transform: translateY(-0.6rem)
+
+			.drone
+				height: 30vh
+				width: 35vh
+				animation: MoveUpDown 3s ease-in-out infinite
+
 		.text
 			position: absolute
-			top: 60vh
-			left: 50vw
+			display: flex
+			justify-content: center
+			align-items: center
+			text-align: center
 			padding: 0 5rem
 			display: flex
 			flex-direction: column
 			gap: 2rem
-			z-index: 3
+			z-index: 30
 
 			.title
 				display: flex
 				align-items: center
 				gap: 0.4rem
 				font-size: 52px
-				white-space: nowrap
 
 			.description
+				width: 50%
 				font-size: 18
 				color: var(--fg-dark)
 
@@ -228,6 +252,9 @@
 @media (max-width: 860px)
 	.container
 		.time
+			.droneContainer
+				top: 10vh
+
 			.text
 				.title
 					font-size: 2.5rem
@@ -245,18 +272,46 @@
 				.description
 					font-size: 0.8rem
 
-@media (max-width: 770px)
+			.droneContainer
+				top: 15vh
+
+				.drone
+					width: 14rem
+					height: 12rem
+
+@media (max-width: 450px)
 	.container
 		.time
+			.droneContainer
+				top: 15vh
+				.drone
+					width: 12rem
+					height: 10rem
 			.text
-				top: 50vh
-				left: 0
-
 				.title
-					justify-content: center
+					font-size: 1.6rem
 
 				.description
-					text-align: center
+					width: 80%
+
+@media (max-width: 320px)
+	.container
+		.time
+			.droneContainer
+				top: 20vh
+				.drone
+					width: 10rem
+					height: 8rem
+
+			.text
+				.title
+					font-size: 1.4rem
+					white-space: nowrap
+
+				.description
+					font-size: 0.7rem
+					width: 90%
+
 
 /* --- MINERAL --- */
 @media (max-width: 800px)

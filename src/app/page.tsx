@@ -47,9 +47,12 @@ export default function Home() {
         </Link>
       </section>
       <section className={s.time} id="first-section">
+        <div className={s.droneContainer}>
+        <Image alt="drone" width={64} height={64} src={'/drone.png'} className={s.drone}/>
+        </div>
         <Image
           alt="time"
-          src={"/test-time.png"}
+          src={"/time.jpg"}
           width={100}
           height={100}
           className={s.image}
