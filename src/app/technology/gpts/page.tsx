@@ -7,10 +7,10 @@ import Header from "@/components/Header/Header";
 import MobileHeader from "@/components/MobileHeader/MobileHeader";
 
 const source = `
-# Technology - GPT
+# Technology - GPTS
 
 <video width="100%" height="100%" controls>
-	<source src="http://dsfgeos.cn/videos/GPTS-1.mp4" type="video/mp4">
+	<source src="https://dsfgeos.cn/videos/GPTS-1.mp4" type="video/mp4">
 </video>
 
 Passive source electromagnetic geophysical exploration technology - GPTS can be applied to mineral resources exploration (deep sea oil and gas and other mineral resources), engineering geological survey, hydrogeological survey, geothermal geological survey, geotechnical survey, disaster and environmental monitoring, and deep space exploration.
