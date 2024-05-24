@@ -85,12 +85,12 @@ function MobileHeader({ isMenuOpen }: { isMenuOpen: boolean }) {
             </div>
             <div className={s.links}>
               <Link href="/technology/gpts">Technology GPTS</Link>
-              <Link href="#">Technology DBCI</Link>
-              <Link href="#">Conferences GPTS</Link>
-              <Link href="#">Conferences DBCI</Link>
-              <Link href="#">About Company</Link>
-              <Link href="#">Project Geography</Link>
-              <Link href="#">Contacts</Link>
+              <Link href="/technology/dbci">Technology DBCI</Link>
+              <Link href="/conferences/gpts">Conferences GPTS</Link>
+              <Link href="/conferences/dbci">Conferences DBCI</Link>
+              <Link href="/about">About Company</Link>
+              <Link href="/projects-geography">Project Geography</Link>
+              <Link href="/contacts">Contacts</Link>
             </div>
           </div>
           <div className={`${s.link} ${isService ? s.active : ""}`}>
