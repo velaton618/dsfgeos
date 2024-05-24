@@ -71,14 +71,14 @@ export default function Home() {
       </section>
       <section className={s.mineral}>
         <div className={s.background}>
-          <Image
+          {/* <Image
             alt="mountains-top"
             src={"/mountains.png"}
             width={100}
             height={100}
             className={s.imageUp}
             layout="responsive"
-          />
+          /> */}
           <Image
             alt="mountains-bottom"
             src={"/mountains.png"}
