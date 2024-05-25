@@ -100,7 +100,7 @@ function About() {
   return (
     <div className={s.container}>
       <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <MobileHeader isMenuOpen={isMenuOpen} />
+      <MobileHeader isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <MDEditor.Markdown className={s.markdown} source={source} />
       <Footer />
     </div>

@@ -1,12 +1,12 @@
 import { ChevronDown, Search } from "lucide-react";
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import s from "./MobileHeader.module.sass";
 import Image from "next/image";
 import Link from "next/link";
 import { NavLink } from "@/models/NavLink";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
-function MobileHeader({ isMenuOpen }: { isMenuOpen: boolean }) {
+function MobileHeader({ isMenuOpen, setIsMenuOpen }: { isMenuOpen: boolean, setIsMenuOpen: Dispatch<SetStateAction<boolean>>; }) {
   const [isTechnology, setIsTechnology] = useState(false);
   const [isService, setIsService] = useState(false);
   const [isProjects, setIsProjects] = useState(false);
@@ -15,6 +15,12 @@ function MobileHeader({ isMenuOpen }: { isMenuOpen: boolean }) {
   const [isDocuments, setIsDocuments] = useState(false);
 
   const path = usePathname();
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  }, [path]);
 
   const closeOtherLinks = (active: NavLink) => {
     if (active !== NavLink.Technology) {
