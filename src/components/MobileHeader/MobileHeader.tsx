@@ -4,6 +4,7 @@ import s from "./MobileHeader.module.sass";
 import Image from "next/image";
 import Link from "next/link";
 import { NavLink } from "@/models/NavLink";
+import { usePathname } from "next/navigation";
 
 function MobileHeader({ isMenuOpen }: { isMenuOpen: boolean }) {
   const [isTechnology, setIsTechnology] = useState(false);
@@ -12,6 +13,8 @@ function MobileHeader({ isMenuOpen }: { isMenuOpen: boolean }) {
   const [isScientificResearch, setIsScientificResearch] = useState(false);
   const [isEquipment, setIsEquipment] = useState(false);
   const [isDocuments, setIsDocuments] = useState(false);
+
+  const path = usePathname();
 
   const closeOtherLinks = (active: NavLink) => {
     if (active !== NavLink.Technology) {
@@ -62,7 +65,7 @@ function MobileHeader({ isMenuOpen }: { isMenuOpen: boolean }) {
   };
 
   return (
-    <div className={`${s.mobileHeader} ${isMenuOpen ? s.active : ""}`}>
+    <div className={`${s.mobileHeader} ${isMenuOpen ? s.active : ""} ${path !== "/" ? s.dark : s.light}`}>
       <div className={s.background} />
       <div className={s.content}>
         <div className={s.logo}>
