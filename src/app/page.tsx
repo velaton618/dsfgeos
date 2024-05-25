@@ -19,7 +19,7 @@ export default function Home() {
       <section className={s.main}>
         <div className={s.text}>
           <h1 className={s.title}>
-            Hebei DSF-GEOS
+            DSF-GEOS
             <br />
             Technology Co., Ltd
           </h1>

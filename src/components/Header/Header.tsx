@@ -111,9 +111,9 @@ function Header({
             className={s.links}
             onMouseLeave={() => openLink(NavLink.Service, false)}
           >
-            <Link href="#">Exploration Oil & Gas</Link>
-            <Link href="#">Engineering Survey</Link>
-            <Link href="#">DSF-GEOS Monitoring</Link>
+            <Link href="/exploration-oil-gas">Exploration Oil & Gas</Link>
+            <Link href="/engineering-survey">Engineering Survey</Link>
+            <Link href="/monitoring">DSF-GEOS Monitoring</Link>
           </div>
         </div>
         <div className={`${s.link} ${isProjects ? s.active : ""}`}>
