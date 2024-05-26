@@ -133,7 +133,7 @@ function ConferencesGPTS() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className={s.container}>
-      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <Header isLight={true} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <MobileHeader isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <MDEditor.Markdown className={s.markdown} source={source} />
       <Footer />

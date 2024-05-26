@@ -9,9 +9,11 @@ import { Dispatch, SetStateAction } from "react";
 function Header({
   isMenuOpen,
   setIsMenuOpen,
+  isLight = false
 }: {
   isMenuOpen: boolean;
   setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
+  isLight: boolean
 }) {
   const [isTechnology, setIsTechnology] = useState(false);
   const [isService, setIsService] = useState(false);
@@ -69,7 +71,7 @@ function Header({
   };
 
   return (
-    <header className={s.header}>
+    <header className={`${s.header} ${isLight ? s.light : ''}`}>
       <div className={s.logo}>
         <Link href={"/"}>
           <Image alt="logo" src="/logo.png" width={50} height={44} />

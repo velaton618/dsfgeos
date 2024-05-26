@@ -53,6 +53,7 @@ function TechnologyDBCI() {
   return (
     <div className={s.container}>
       <Header
+        isLight={true}
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
       />

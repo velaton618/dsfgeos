@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <div className={s.container}>
-      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <Header isLight={false} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <MobileHeader isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <section className={s.main}>
         <div className={s.text}>
