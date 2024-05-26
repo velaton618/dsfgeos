@@ -7,6 +7,7 @@ import { NavLink } from "@/models/NavLink";
 import { usePathname, useRouter } from "next/navigation";
 
 function MobileHeader({ isMenuOpen, setIsMenuOpen }: { isMenuOpen: boolean, setIsMenuOpen: Dispatch<SetStateAction<boolean>>; }) {
+  // TODO: MAKE const selected as NavLink.
   const [isTechnology, setIsTechnology] = useState(false);
   const [isService, setIsService] = useState(false);
   const [isProjects, setIsProjects] = useState(false);
@@ -108,9 +109,9 @@ function MobileHeader({ isMenuOpen, setIsMenuOpen }: { isMenuOpen: boolean, setI
               <ChevronDown strokeWidth={1} />
             </div>
             <div className={s.links}>
-              <Link href="#">Exploration Oil & Gas</Link>
-              <Link href="#">Engineering Survey</Link>
-              <Link href="#">DSF-GEOS Monitoring</Link>
+              <Link href="/exploration-oil-gas">Exploration Oil & Gas</Link>
+              <Link href="/engineering-survey">Engineering Survey</Link>
+              <Link href="/monitoring">DSF-GEOS Monitoring</Link>
             </div>
           </div>
           <div className={`${s.link} ${isProjects ? s.active : ""}`}>
