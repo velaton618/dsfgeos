@@ -30,7 +30,7 @@ DSF-GEOS employs GPTS technology to explore the deep structure and prospects of 
 
 Aerogeophysical works with the GPTS method involve several stages:
 
-[img](/exploration_oil_gas/1.webp)
+![img](/exploration_oil_gas/1.webp)
 1. **Preliminary Survey**
 2. **Install Detector on Aircraft**
 3. **Upload Data to Server**
