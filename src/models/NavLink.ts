@@ -6,4 +6,5 @@ export enum NavLink {
   Equipment,
   Documents,
   News,
+  None
 }

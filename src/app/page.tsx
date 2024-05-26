@@ -1,21 +1,11 @@
-"use client";
-
 import Image from "next/image";
 import s from "./page.module.sass";
 import { Hourglass, MountainIcon } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import Header from "@/components/Header/Header";
-import MobileHeader from "@/components/MobileHeader/MobileHeader";
-import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <div className={s.container}>
-      <Header isLight={false} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <MobileHeader isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <section className={s.main}>
         <div className={s.text}>
           <h1 className={s.title}>
@@ -106,7 +96,6 @@ export default function Home() {
           className={s.image}
         />
       </section>
-      <Footer />
     </div>
   );
 }

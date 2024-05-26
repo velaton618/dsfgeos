@@ -1,95 +1,39 @@
-import React, { useEffect, useRef, useState } from "react";
+'use client'
+
+import { useState } from "react";
 import s from "./Header.module.sass";
 import { NavLink } from "@/models/NavLink";
 import { ChevronDown, Menu, Search, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Dispatch, SetStateAction } from "react";
 
-function Header({
-  isMenuOpen,
-  setIsMenuOpen,
-  isLight = false
-}: {
-  isMenuOpen: boolean;
-  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
-  isLight: boolean
-}) {
-  const [isTechnology, setIsTechnology] = useState(false);
-  const [isService, setIsService] = useState(false);
-  const [isProjects, setIsProjects] = useState(false);
-  const [isScientificResearch, setIsScientificResearch] = useState(false);
-  const [isEquipment, setIsEquipment] = useState(false);
-  const [isDocuments, setIsDocuments] = useState(false);
-
-  const closeOtherLinks = (active: NavLink) => {
-    if (active !== NavLink.Technology) {
-      setIsTechnology(false);
-    }
-    if (active !== NavLink.Service) {
-      setIsService(false);
-    }
-    if (active !== NavLink.Projects) {
-      setIsProjects(false);
-    }
-    if (active !== NavLink.ScientificResearch) {
-      setIsScientificResearch(false);
-    }
-    if (active !== NavLink.Equipment) {
-      setIsEquipment(false);
-    }
-    if (active !== NavLink.Documents) {
-      setIsDocuments(false);
-    }
-  };
-
-  const openLink = (link: NavLink, value: boolean | undefined = undefined) => {
-    closeOtherLinks(link);
-
-    switch (link) {
-      case NavLink.Technology:
-        setIsTechnology((prev) => value || !prev);
-        break;
-      case NavLink.Service:
-        setIsService((prev) => value || !prev);
-        break;
-      case NavLink.Projects:
-        setIsProjects((prev) => value || !prev);
-        break;
-      case NavLink.ScientificResearch:
-        setIsScientificResearch((prev) => value || !prev);
-        break;
-      case NavLink.Equipment:
-        setIsEquipment((prev) => value || !prev);
-        break;
-      case NavLink.Documents:
-        setIsDocuments((prev) => value || !prev);
-        break;
-      default:
-        break;
-    }
-  };
+function Header() {
+  const [selectedLink, setSelectedLink] = useState(NavLink.None);
 
   return (
-    <header className={`${s.header} ${isLight ? s.light : ''}`}>
+    <header className={`${s.header}`}>
       <div className={s.logo}>
         <Link href={"/"}>
           <Image alt="logo" src="/logo.png" width={50} height={44} />
         </Link>
       </div>
       <nav className={s.navigation}>
-        <div className={`${s.link} ${isTechnology ? s.active : ""}`}>
+        <div
+          className={`${s.link} ${
+            selectedLink === NavLink.Technology ? s.active : ""
+          }`}
+        >
           <p
             className={s.inner}
-            onClick={() => openLink(NavLink.Technology)}
-            onMouseOver={() => openLink(NavLink.Technology, true)}
+            onClick={() => setSelectedLink(NavLink.Technology)}
+            onMouseOver={() => setSelectedLink(NavLink.Technology)}
           >
             Technology <ChevronDown strokeWidth={1} />
           </p>
 
           <div
             className={s.links}
-            onMouseLeave={() => openLink(NavLink.Technology, false)}
+            onMouseLeave={() => setSelectedLink(NavLink.None)}
           >
             <Link href="/technology/gpts">Technology GPTS</Link>
             <Link href="/technology/dbci">Technology DBCI</Link>
@@ -100,82 +44,102 @@ function Header({
             <Link href="/contacts">Contacts</Link>
           </div>
         </div>
-        <div className={`${s.link} ${isService ? s.active : ""}`}>
+        <div
+          className={`${s.link} ${
+            selectedLink === NavLink.Service ? s.active : ""
+          }`}
+        >
           <div
             className={s.inner}
-            onClick={() => openLink(NavLink.Service)}
-            onMouseOver={() => openLink(NavLink.Service, true)}
+            onClick={() => setSelectedLink(NavLink.Service)}
+            onMouseOver={() => setSelectedLink(NavLink.Service)}
           >
             <Link href="#">Service</Link>
             <ChevronDown strokeWidth={1} />
           </div>
           <div
             className={s.links}
-            onMouseLeave={() => openLink(NavLink.Service, false)}
+            onMouseLeave={() => setSelectedLink(NavLink.None)}
           >
             <Link href="/exploration-oil-gas">Exploration Oil & Gas</Link>
             <Link href="/engineering-survey">Engineering Survey</Link>
             <Link href="/monitoring">DSF-GEOS Monitoring</Link>
           </div>
         </div>
-        <div className={`${s.link} ${isProjects ? s.active : ""}`}>
+        <div
+          className={`${s.link} ${
+            selectedLink === NavLink.Projects ? s.active : ""
+          }`}
+        >
           <div
             className={s.inner}
-            onClick={() => openLink(NavLink.Projects)}
-            onMouseOver={() => openLink(NavLink.Projects, true)}
+            onClick={() => setSelectedLink(NavLink.Projects)}
+            onMouseOver={() => setSelectedLink(NavLink.Projects)}
           >
             <Link href="#">Projects</Link>
             <ChevronDown strokeWidth={1} />
           </div>
           <div
             className={s.links}
-            onMouseLeave={() => openLink(NavLink.Projects, false)}
+            onMouseLeave={() => setSelectedLink(NavLink.None)}
           >
             <Link href="#">Projects</Link>
             <Link href="#">Conclusions</Link>
           </div>
         </div>
-        <div className={`${s.link} ${isScientificResearch ? s.active : ""}`}>
+        <div
+          className={`${s.link} ${
+            selectedLink === NavLink.ScientificResearch ? s.active : ""
+          }`}
+        >
           <div
             className={s.inner}
-            onClick={() => openLink(NavLink.ScientificResearch)}
-            onMouseOver={() => openLink(NavLink.ScientificResearch, true)}
+            onClick={() => setSelectedLink(NavLink.ScientificResearch)}
+            onMouseOver={() => setSelectedLink(NavLink.ScientificResearch)}
           >
             <Link href="#">Scientific research</Link>
             <ChevronDown strokeWidth={1} />
           </div>
           <div
             className={s.links}
-            onMouseLeave={() => openLink(NavLink.ScientificResearch, false)}
+            onMouseLeave={() => setSelectedLink(NavLink.None)}
           >
             <Link href="#">Study of The Earth</Link>
             <Link href="#">Study of The Antarctic Region</Link>
             <Link href="#">Laboratory Testing</Link>
           </div>
         </div>
-        <div className={`${s.link} ${isEquipment ? s.active : ""}`}>
+        <div
+          className={`${s.link} ${
+            selectedLink === NavLink.Equipment ? s.active : ""
+          }`}
+        >
           <div
             className={s.inner}
-            onClick={() => openLink(NavLink.Equipment)}
-            onMouseOver={() => openLink(NavLink.Equipment, true)}
+            onClick={() => setSelectedLink(NavLink.Equipment)}
+            onMouseOver={() => setSelectedLink(NavLink.Equipment)}
           >
             <Link href="#">Equipment</Link>
             <ChevronDown strokeWidth={1} />
           </div>
           <div
             className={s.links}
-            onMouseLeave={() => openLink(NavLink.Equipment, false)}
+            onMouseLeave={() => setSelectedLink(NavLink.None)}
           >
             <Link href="#">Measurement Techniques</Link>
             <Link href="#">Scanner DSF</Link>
             <Link href="#">Metrology</Link>
           </div>
         </div>
-        <div className={`${s.link} ${isDocuments ? s.active : ""}`}>
+        <div
+          className={`${s.link} ${
+            selectedLink === NavLink.Documents ? s.active : ""
+          }`}
+        >
           <div
             className={s.inner}
-            onClick={() => openLink(NavLink.Documents)}
-            onMouseOver={() => openLink(NavLink.Documents, true)}
+            onClick={() => setSelectedLink(NavLink.Documents)}
+            onMouseOver={() => setSelectedLink(NavLink.Documents)}
           >
             <Link href="#">Documents</Link>
             <ChevronDown strokeWidth={1} />
@@ -183,7 +147,7 @@ function Header({
 
           <div
             className={s.links}
-            onMouseLeave={() => openLink(NavLink.Documents, false)}
+            onMouseLeave={() => setSelectedLink(NavLink.None)}
           >
             <Link href="#">Patents</Link>
             <Link href="#">Licenses</Link>
@@ -201,12 +165,6 @@ function Header({
         <input placeholder="Search..." />
         <Search className={s.icon} strokeWidth={1} />
       </div>
-      <button
-        className={s.menuBtn}
-        onClick={() => setIsMenuOpen((prev) => !prev)}
-      >
-        {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
-      </button>
     </header>
   );
 }

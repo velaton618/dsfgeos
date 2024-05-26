@@ -1,21 +1,16 @@
-import { ChevronDown, Search } from "lucide-react";
+'use client'
+
+import { ChevronDown, Menu, Search, X } from "lucide-react";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import s from "./MobileHeader.module.sass";
 import Image from "next/image";
 import Link from "next/link";
 import { NavLink } from "@/models/NavLink";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
-function MobileHeader({ isMenuOpen, setIsMenuOpen }: { isMenuOpen: boolean, setIsMenuOpen: Dispatch<SetStateAction<boolean>>; }) {
-  // TODO: MAKE const selected as NavLink.
-  const [isTechnology, setIsTechnology] = useState(false);
-  const [isService, setIsService] = useState(false);
-  const [isProjects, setIsProjects] = useState(false);
-  const [isScientificResearch, setIsScientificResearch] = useState(false);
-  const [isEquipment, setIsEquipment] = useState(false);
-  const [isDocuments, setIsDocuments] = useState(false);
-
+function MobileHeader() {
   const path = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -23,53 +18,7 @@ function MobileHeader({ isMenuOpen, setIsMenuOpen }: { isMenuOpen: boolean, setI
     }
   }, [path]);
 
-  const closeOtherLinks = (active: NavLink) => {
-    if (active !== NavLink.Technology) {
-      setIsTechnology(false);
-    }
-    if (active !== NavLink.Service) {
-      setIsService(false);
-    }
-    if (active !== NavLink.Projects) {
-      setIsProjects(false);
-    }
-    if (active !== NavLink.ScientificResearch) {
-      setIsScientificResearch(false);
-    }
-    if (active !== NavLink.Equipment) {
-      setIsEquipment(false);
-    }
-    if (active !== NavLink.Documents) {
-      setIsDocuments(false);
-    }
-  };
-
-  const openLink = (link: NavLink, value: boolean | undefined = undefined) => {
-    closeOtherLinks(link);
-
-    switch (link) {
-      case NavLink.Technology:
-        setIsTechnology((prev) => value || !prev);
-        break;
-      case NavLink.Service:
-        setIsService((prev) => value || !prev);
-        break;
-      case NavLink.Projects:
-        setIsProjects((prev) => value || !prev);
-        break;
-      case NavLink.ScientificResearch:
-        setIsScientificResearch((prev) => value || !prev);
-        break;
-      case NavLink.Equipment:
-        setIsEquipment((prev) => value || !prev);
-        break;
-      case NavLink.Documents:
-        setIsDocuments((prev) => value || !prev);
-        break;
-      default:
-        break;
-    }
-  };
+  const [selectedLink, setSelectedLink] = useState(NavLink.None)
 
   return (
     <div className={`${s.mobileHeader} ${isMenuOpen ? s.active : ""} ${path !== "/" ? s.dark : s.light}`}>
@@ -85,10 +34,10 @@ function MobileHeader({ isMenuOpen, setIsMenuOpen }: { isMenuOpen: boolean, setI
           <Search className={s.icon} strokeWidth={1} />
         </div>
         <nav className={s.navigation}>
-          <div className={`${s.link} ${isTechnology ? s.active : ""}`}>
+          <div className={`${s.link} ${selectedLink === NavLink.Technology ? s.active : ""}`}>
             <div
               className={s.inner}
-              onClick={() => openLink(NavLink.Technology)}
+              onClick={() => setSelectedLink(NavLink.Technology)}
             >
               <Link href="#">Technology</Link>
               <ChevronDown strokeWidth={1} />
@@ -103,8 +52,8 @@ function MobileHeader({ isMenuOpen, setIsMenuOpen }: { isMenuOpen: boolean, setI
               <Link href="/contacts">Contacts</Link>
             </div>
           </div>
-          <div className={`${s.link} ${isService ? s.active : ""}`}>
-            <div className={s.inner} onClick={() => openLink(NavLink.Service)}>
+          <div className={`${s.link} ${selectedLink === NavLink.Service ? s.active : ""}`}>
+            <div className={s.inner} onClick={() => setSelectedLink(NavLink.Service)}>
               <Link href="#">Service</Link>
               <ChevronDown strokeWidth={1} />
             </div>
@@ -114,8 +63,8 @@ function MobileHeader({ isMenuOpen, setIsMenuOpen }: { isMenuOpen: boolean, setI
               <Link href="/monitoring">DSF-GEOS Monitoring</Link>
             </div>
           </div>
-          <div className={`${s.link} ${isProjects ? s.active : ""}`}>
-            <div className={s.inner} onClick={() => openLink(NavLink.Projects)}>
+          <div className={`${s.link} ${selectedLink === NavLink.Projects ? s.active : ""}`}>
+            <div className={s.inner} onClick={() => setSelectedLink(NavLink.Projects)}>
               <Link href="#">Projects</Link>
               <ChevronDown strokeWidth={1} />
             </div>
@@ -124,10 +73,10 @@ function MobileHeader({ isMenuOpen, setIsMenuOpen }: { isMenuOpen: boolean, setI
               <Link href="#">Conclusions</Link>
             </div>
           </div>
-          <div className={`${s.link} ${isScientificResearch ? s.active : ""}`}>
+          <div className={`${s.link} ${selectedLink === NavLink.ScientificResearch ? s.active : ""}`}>
             <div
               className={s.inner}
-              onClick={() => openLink(NavLink.ScientificResearch)}
+              onClick={() => setSelectedLink(NavLink.ScientificResearch)}
             >
               <Link href="#">Scientific research</Link>
               <ChevronDown strokeWidth={1} />
@@ -138,10 +87,10 @@ function MobileHeader({ isMenuOpen, setIsMenuOpen }: { isMenuOpen: boolean, setI
               <Link href="#">Laboratory Testing</Link>
             </div>
           </div>
-          <div className={`${s.link} ${isEquipment ? s.active : ""}`}>
+          <div className={`${s.link} ${selectedLink === NavLink.Equipment ? s.active : ""}`}>
             <div
               className={s.inner}
-              onClick={() => openLink(NavLink.Equipment)}
+              onClick={() => setSelectedLink(NavLink.Equipment)}
             >
               <Link href="#">Equipment</Link>
               <ChevronDown strokeWidth={1} />
@@ -152,10 +101,10 @@ function MobileHeader({ isMenuOpen, setIsMenuOpen }: { isMenuOpen: boolean, setI
               <Link href="#">Metrology</Link>
             </div>
           </div>
-          <div className={`${s.link} ${isDocuments ? s.active : ""}`}>
+          <div className={`${s.link} ${selectedLink === NavLink.Documents ? s.active : ""}`}>
             <div
               className={s.inner}
-              onClick={() => openLink(NavLink.Documents)}
+              onClick={() => setSelectedLink(NavLink.Documents)}
             >
               <Link href="#">Documents</Link>
               <ChevronDown strokeWidth={1} />
@@ -175,6 +124,12 @@ function MobileHeader({ isMenuOpen, setIsMenuOpen }: { isMenuOpen: boolean, setI
           </div>
         </nav>
       </div>
+      <button
+        className={s.menuBtn}
+        onClick={() => setIsMenuOpen((prev) => !prev)}
+      >
+        {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
+      </button>
     </div>
   );
 }
