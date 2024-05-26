@@ -1,12 +1,7 @@
 .container
-	height: 100%
 	width: 100%
 	background: var(--bg)
 	color: var(--fg)
-
-	background-image: url('../../public/background.png')
-	background-size: cover
-	background-position: center
 
 	overflow-x: hidden
 
@@ -20,13 +15,17 @@
 
 	.main
 		padding-top: 12vh
-		height: 100%
-		width: 100%
+		height: 100vh
+		width: 100vw
 		display: flex
 		flex-direction: column
 		justify-content: center
 		align-items: center
 		gap: 12vh
+
+		background-image: url('../../public/background.png')
+		background-size: cover
+		background-position: center
 
 		@keyframes MoveUpDown
 			0%, 100%
