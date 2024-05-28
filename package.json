@@ -11,7 +11,7 @@
   "dependencies": {
     "@uiw/react-md-editor": "^4.0.4",
     "lucide-react": "^0.378.0",
-    "next": "14.2.3",
+    "next": "^14.2.3",
     "react": "^18",
     "react-dom": "^18"
   },
