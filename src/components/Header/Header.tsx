@@ -42,7 +42,7 @@ function Header() {
       <header className={`${s.header} ${isBlured ? s.blur : ""}`}>
         <div className={s.logo}>
           <Link href={"/"}>
-            <Image alt="logo" src="/logo.png" width={50} height={44} />
+            <Image alt="logo" src="/logo.png" width={50} height={44} unoptimized />
           </Link>
         </div>
         <nav className={s.navigation}>
@@ -207,7 +207,7 @@ function Header() {
         <div className={`${s.content} ${isMenuOpen ? s.active : ""}`}>
           <div className={s.logo}>
             <Link href={"/"}>
-              <Image alt="logo" src="/logo.png" width={50} height={44} />
+              <Image alt="logo" src="/logo.png" width={50} height={44} unoptimized /> 
             </Link>
           </div>
           <div className={s.search}>

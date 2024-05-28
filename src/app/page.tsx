@@ -42,7 +42,7 @@ export default function Home() {
           src={"/time.jpg"}
           width={100}
           height={100}
-          className={s.image}
+          className={s.image} unoptimized
         />
         <div className={s.text}>
           <h1 className={s.title}>
@@ -64,7 +64,7 @@ export default function Home() {
             width={100}
             height={100}
             layout="responsive"
-            className={s.imageDown}
+            className={s.imageDown} unoptimized
           />
         </div>
         <div className={s.text}>
@@ -93,7 +93,7 @@ export default function Home() {
           src={"/oil.png"}
           width={100}
           height={100}
-          className={s.image}
+          className={s.image} unoptimized
         />
       </section>
     </div>

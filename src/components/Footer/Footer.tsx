@@ -5,7 +5,7 @@ import Image from "next/image";
 function Footer() {
   return (
     <footer className={s.footer}>
-      <Image alt="logo" width={48} height={48} src={"/logo2.png"} />
+      <Image alt="logo" width={48} height={48} src={"/logo2.png"} unoptimized />
       <div className={s.text}>
         <div className={s.info}>
           <p>Email: geopolariton@dsfgeos.cn</p>
