@@ -68,7 +68,9 @@ function Header() {
               <Link href="/technology/conferences/gpts">Conferences GPTS</Link>
               <Link href="/technology/conferences/dbci">Conferences DBCI</Link>
               <Link href="/technology/about">About Company</Link>
-              <Link href="/technology/projects-geography">Project Geography</Link>
+              <Link href="/technology/projects-geography">
+                Project Geography
+              </Link>
               <Link href="/technology/contacts">Contacts</Link>
             </div>
           </div>
@@ -89,7 +91,9 @@ function Header() {
               className={s.links}
               onMouseLeave={() => setSelectedLink(NavLink.None)}
             >
-              <Link href="/service/exploration-oil-gas">Exploration Oil & Gas</Link>
+              <Link href="/service/exploration-oil-gas">
+                Exploration Oil & Gas
+              </Link>
               <Link href="/service/engineering-survey">Engineering Survey</Link>
               <Link href="/service/monitoring">DSF-GEOS Monitoring</Link>
             </div>
@@ -133,8 +137,12 @@ function Header() {
               onMouseLeave={() => setSelectedLink(NavLink.None)}
             >
               <Link href="/scientific-research/earth">Study of The Earth</Link>
-              <Link href="/scientific-research/antarctic">Study of The Antarctic Region</Link>
-              <Link href="/scientific-research/labaratory-testing">Laboratory Testing</Link>
+              <Link href="/scientific-research/antarctic">
+                Study of The Antarctic Region
+              </Link>
+              <Link href="/scientific-research/labaratory-testing">
+                Laboratory Testing
+              </Link>
             </div>
           </div>
           <div
@@ -216,17 +224,23 @@ function Header() {
                 className={s.inner}
                 onClick={() => setSelectedLink(NavLink.Technology)}
               >
-                <Link href="#">Technology</Link>
+                Technology
                 <ChevronDown strokeWidth={1} />
               </div>
               <div className={s.links}>
                 <Link href="/technology/gpts">Technology GPTS</Link>
                 <Link href="/technology/dbci">Technology DBCI</Link>
-                <Link href="/conferences/gpts">Conferences GPTS</Link>
-                <Link href="/conferences/dbci">Conferences DBCI</Link>
-                <Link href="/about">About Company</Link>
-                <Link href="/projects-geography">Project Geography</Link>
-                <Link href="/contacts">Contacts</Link>
+                <Link href="/technology/conferences/gpts">
+                  Conferences GPTS
+                </Link>
+                <Link href="/technology/conferences/dbci">
+                  Conferences DBCI
+                </Link>
+                <Link href="/technology/about">About Company</Link>
+                <Link href="/technology/projects-geography">
+                  Project Geography
+                </Link>
+                <Link href="/technology/contacts">Contacts</Link>
               </div>
             </div>
             <div
@@ -238,13 +252,17 @@ function Header() {
                 className={s.inner}
                 onClick={() => setSelectedLink(NavLink.Service)}
               >
-                <Link href="#">Service</Link>
+                Service
                 <ChevronDown strokeWidth={1} />
               </div>
               <div className={s.links}>
-                <Link href="/exploration-oil-gas">Exploration Oil & Gas</Link>
-                <Link href="/engineering-survey">Engineering Survey</Link>
-                <Link href="/monitoring">DSF-GEOS Monitoring</Link>
+                <Link href="/service/exploration-oil-gas">
+                  Exploration Oil & Gas
+                </Link>
+                <Link href="/service/engineering-survey">
+                  Engineering Survey
+                </Link>
+                <Link href="/service/monitoring">DSF-GEOS Monitoring</Link>
               </div>
             </div>
             <div
@@ -256,12 +274,12 @@ function Header() {
                 className={s.inner}
                 onClick={() => setSelectedLink(NavLink.Projects)}
               >
-                <Link href="#">Projects</Link>
+                Projects
                 <ChevronDown strokeWidth={1} />
               </div>
               <div className={s.links}>
-                <Link href="#">Projects</Link>
-                <Link href="#">Conclusions</Link>
+                <Link href="/projects/reports">Reports</Link>
+                <Link href="/projects/conclusions">Conclusions</Link>
               </div>
             </div>
             <div
@@ -273,13 +291,19 @@ function Header() {
                 className={s.inner}
                 onClick={() => setSelectedLink(NavLink.ScientificResearch)}
               >
-                <Link href="#">Scientific research</Link>
+                Scientific research
                 <ChevronDown strokeWidth={1} />
               </div>
               <div className={s.links}>
-                <Link href="#">Study of The Earth</Link>
-                <Link href="#">Study of The Antarctic Region</Link>
-                <Link href="#">Laboratory Testing</Link>
+                <Link href="/scientific-research/earth">
+                  Study of The Earth
+                </Link>
+                <Link href="/scientific-research/antarctic">
+                  Study of The Antarctic Region
+                </Link>
+                <Link href="/scientific-research/labaratory-testing">
+                  Laboratory Testing
+                </Link>
               </div>
             </div>
             <div
@@ -291,13 +315,15 @@ function Header() {
                 className={s.inner}
                 onClick={() => setSelectedLink(NavLink.Equipment)}
               >
-                <Link href="#">Equipment</Link>
+                Equipment
                 <ChevronDown strokeWidth={1} />
               </div>
               <div className={s.links}>
-                <Link href="#">Measurement Techniques</Link>
-                <Link href="#">Scanner DSF</Link>
-                <Link href="#">Metrology</Link>
+                <Link href="/equipment/measurement">
+                  Measurement Techniques
+                </Link>
+                <Link href="/equipment/dsf-scanner">Scanner DSF</Link>
+                <Link href="/equipment/metrology">Metrology</Link>
               </div>
             </div>
             <div
@@ -309,20 +335,20 @@ function Header() {
                 className={s.inner}
                 onClick={() => setSelectedLink(NavLink.Documents)}
               >
-                <Link href="#">Documents</Link>
+                Documents
                 <ChevronDown strokeWidth={1} />
               </div>
 
               <div className={s.links}>
-                <Link href="#">Patents</Link>
-                <Link href="#">Licenses</Link>
-                <Link href="#">Certificates</Link>
-                <Link href="#">Publications</Link>
+                <Link href="/documents/patents">Patents</Link>
+                <Link href="/documents/licenses">Licenses</Link>
+                <Link href="/documents/certificates">Certificates</Link>
+                <Link href="/documents/publications">Publications</Link>
               </div>
             </div>
             <div className={s.link}>
               <div className={s.inner}>
-                <Link href="#">News</Link>
+                <Link href="/news">News</Link>
               </div>
             </div>
           </nav>
