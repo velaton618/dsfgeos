@@ -111,7 +111,7 @@ function Header() {
               className={s.links}
               onMouseLeave={() => setSelectedLink(NavLink.None)}
             >
-              <Link href="/projects/projects">Projects</Link>
+              <Link href="/projects/reports">Reports</Link>
               <Link href="/projects/conclusions">Conclusions</Link>
             </div>
           </div>

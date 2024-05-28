@@ -3,8 +3,6 @@ import MarkdownPage from "@/components/MarkdownPage/MarkdownPage";;
 const source = `
 # Engineering and Geological Survey with DSF-GEOS
 
-![Engineering Survey](https://dsfgeos.com/img/engineering_survey.jpg)
-
 ## Introduction
 
 Engineering and geological surveys play a crucial role in understanding subsurface structures and assessing the conditions for various construction projects. DSF-GEOS employs advanced techniques and methodologies to conduct comprehensive surveys for a wide range of purposes.
