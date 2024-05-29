@@ -39,7 +39,7 @@ function Header() {
 
   return (
     <div>
-      <header className={`${s.header} ${isBlured ? s.blur : ""}`}>
+      <div className={`${s.header} ${isBlured ? s.blur : ""}`}>
         <div className={s.logo}>
           <Link href={"/"}>
             <Image alt="logo" src="/logo.png" width={50} height={44} unoptimized />
@@ -201,7 +201,7 @@ function Header() {
           <input placeholder="Search..." />
           <Search className={s.icon} strokeWidth={1} />
         </div>
-      </header>
+      </div>
       <div className={s.mobileHeader}>
         <div className={`${s.background} ${isMenuOpen ? s.active : ""}`} />
         <div className={`${s.content} ${isMenuOpen ? s.active : ""}`}>

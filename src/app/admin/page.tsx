@@ -1,32 +1,75 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import s from "./admin.module.sass";
-import { setAuth } from "@/store/slices/adminSlice";
+import { BASE_URL } from "@/$api";
 
 function Admin() {
-  const isAuth: any = useSelector((state: any) => state.admin.isAuth);
-  const dispatch = useDispatch();
+  const [isAuth, setIsAuth] = useState(false);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+
+    const res = await fetch(`${BASE_URL}/admins/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    });
+
+		const data = await res.json();
+
+    if (data.token) {
+      setIsAuth(true);
+      localStorage.setItem('access-token', data.token);
+    }
+  }
 
   useEffect(() => {
-		dispatch(setAuth(true));
-	}, []);
+    async function checkAuth() {
+      const response = await fetch(`${BASE_URL}/admins/me`, {
+        credentials: 'include',
+        headers: {
+          Authorization: `JWT ${localStorage.getItem("access-token")}`
+        }
+      });
 
-  return <div className={s.container}>
-		{ isAuth ? 
-		<div className={s.login}>
-			<form className={s.form}>
-				<input className={s.input} placeholder="Email" type="email"/>
-				<input className={s.input} placeholder="Password" type="password"/>
-				<button className={s.button}>Log in</button>
-			</form>
-		</div>
-		:
-		<div className={s.panel}>
+      const data = await response.json();
 
-		</div> }
-	</div>;
+      if (data.user) {
+        setIsAuth(true);
+      }
+    }
+
+    checkAuth();
+  }, []);
+
+  return (
+    <div className={s.container}>
+      {!isAuth ? (
+        <div className={s.login}>
+          <form className={s.form} onSubmit={handleSubmit}>
+            <input value={email} onChange={(e) => setEmail(e.target.value)} className={s.input} placeholder="Email" type="email" />
+            <input value={password} onChange={(e) => setPassword(e.target.value)} className={s.input} placeholder="Password" type="password" />
+            <button className={s.button} type="submit">
+              Log in
+            </button>
+          </form>
+        </div>
+      ) : (
+        <div className={s.panel}>
+          <h1>Admin Panel</h1>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default Admin;
