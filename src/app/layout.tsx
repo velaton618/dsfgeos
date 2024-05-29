@@ -3,15 +3,17 @@ import { Inter } from "next/font/google";
 import "./globals.sass";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import Providers from "./Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "DSF-GEOS",
-  description: "Unveiling Earth's Hidden Treasures: Revolutionize Exploration with GPTS Technology",
+  description:
+    "Unveiling Earth's Hidden Treasures: Revolutionize Exploration with GPTS Technology",
   openGraph: {
-    images: 'https://dsfgeos-dlou3sfoc-uaquaxs-projects.vercel.app/og.png',
-  }
+    images: "https://dsfgeos-dlou3sfoc-uaquaxs-projects.vercel.app/og.png",
+  },
 };
 
 export default function RootLayout({
@@ -22,10 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer/>
-        </body>
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
+      </body>
     </html>
   );
 }
