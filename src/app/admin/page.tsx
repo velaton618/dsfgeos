@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import s from "./admin.module.sass";
 import { BASE_URL } from "@/$api";
+import Link from "next/link";
 
 function Admin() {
   const [isAuth, setIsAuth] = useState(false);
@@ -66,6 +67,7 @@ function Admin() {
       ) : (
         <div className={s.panel}>
           <h1>Admin Panel</h1>
+          <Link href={"/admin/pages"}>Pages</Link>
         </div>
       )}
     </div>

@@ -61,7 +61,7 @@ function Pages() {
   return (
     <div className={s.container}>
       {isAuth ? (
-        <div>
+        <div className={s.inner}>
           <div className={s.pages}>
             {pages?.length > 0 ? <h1>Pages</h1> : null}
             {pages.map((p: any) => (
@@ -70,7 +70,7 @@ function Pages() {
               </div>
             ))}
           </div>
-		  <Link href="/admin/pages/create">Create a new page</Link>
+          <Link href="/admin/pages/create">Create a new page</Link>
         </div>
       ) : null}
     </div>
