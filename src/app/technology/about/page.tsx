@@ -2,9 +2,10 @@ import MarkdownPage from "@/components/MarkdownPage/MarkdownPage";;
 
 const source = `
 # DSF-GEOS
-
-
 ![img](/about/main.jpg)
+<p style="text-align:center">
+  <a href="https://www.researchgate.net/profile/Yuriy-Bogdanov">Yuriy Bogdanov, Ph.D., Chairman Directors, Principal Researcher</a>
+</p>
 
 ## About
 
@@ -68,7 +69,7 @@ II. Bio-electromagnetic technology -- DBCI (Brains-Blood Coupling Interface) bra
 Is an application of technology in the direction of biological electromagnetic edge science, through the electromagnetic signal emitted by the organism spectrum analysis, in order to determine the physiological, pathological and even psychological changes in the state of the organism.Sensor and software analysis system has been successfully developed trial production, the ultimate goal is to apply it to the field of life safety testing and monitoring and artificial intelligence, such as passenger transport, high-speed rail, aircraft pilot fatigue and mental tension monitoring.
 III. Spectrum analysis diagnostic method-DSF (Diagnostic Sanogenesis Frequency) rehabilitation frequency diagnostic method：
 It is a method of diagnosing the state of each unit of the cardiovascular system.Can be used to find more information on the control status of each unit of the cardiovascular system in response to ECG signals.Such as through the ECG spectrum analysis, can be found in myocardial infarction,stroke precursors, and even can be used to detect virus infection and latent (such as COVID-19 virus). At present, a cooperation agreement has been signed with the National Academy of Sciences of Ukraine, the new Crown virus (COVID-19) infection and latent detection experiments are being carried out.
-DSF-GEOS in line with the latest promulgated by the state to encourage foreign investment in the industry directory, geophysical exploration and biomedical and other fields to encourage many conditions.And has obtained the Provincial Science and technology SME certificate issued by the Hebei Provincial Department of Science and technology, and has been stored in 2019 and 2020 National Science.
+DSF-GEOS in line with the latest promulgated by the state to encourage foreign investment in the industry directory, geophysical exploration and biomedical and other fields to encourage many conditions, and has obtained the Provincial Science and technology SME certificate issued by the Hebei Provincial Department of Science and technology, and has been stored in 2019, 2020 and 2023 National Science.
 
 ## COMPANY PREDECESSOR HISTORY
 
@@ -81,7 +82,7 @@ DSF-GEOS in line with the latest promulgated by the state to encourage foreign i
 ### COMPANY "MAC•SAI"
 
 <video width="100%" height="100%" controls>
-	<source src="/about/video-3.mp4" type="video/mp4">
+	<source src="https://dsfgeos.vercel.app/about/video-3.mp4" type="video/mp4">
 </video>
 `;
 
