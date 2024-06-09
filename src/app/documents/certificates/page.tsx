@@ -4,9 +4,9 @@ const source = `
 `;
 
 function Page() {
-  return (
-    <MarkdownPage source={source}/>
-  );
+    return (
+        <MarkdownPage source={source} />
+    );
 }
 
 export default Page;

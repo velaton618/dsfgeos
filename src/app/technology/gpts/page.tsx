@@ -38,7 +38,9 @@ GPTS technology has a wide range of applications, including:
 - **Cost-Efficiency**: Reduces financial risks associated with geological exploration projects.
 - **Rapid Evaluation**: Provides quick assessments of mineral resource potential, aiding in early decision-making.
 - **Accurate Mapping**: Offers precise mapping of oil fields and natural gas deposits, facilitating better project planning and investment decisions.
-	`;
+
+![image](/gpts/image.jpg)
+`;
 
 function TechnologyGPTS() {
   return (
