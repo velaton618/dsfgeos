@@ -9,7 +9,8 @@ const source = `
     CHANGSHA URANIUM GEOLOGY RESEARCH INSTITUTE, CNNC
 </p>
 
-![image](/scientific-research/laboratory-testing/1.jpeg)
+<img src="/scientific-research/laboratory-testing/1.jpeg" style="width: auto;"/>
+
 <video width="100%" height="100%" controls>
 	<source src="/scientific-research/antarctic/video.mp4" type="video/mp4">
 </video>
