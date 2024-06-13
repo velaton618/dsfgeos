@@ -3,9 +3,7 @@ import s from "./news.module.sass";
 import { createClient } from "../../supabase/server";
 import { INews } from "@/models/INews";
 import { headers } from "next/headers";
-
 const LIMIT = 10;
-
 async function getNews(page: number): Promise<INews[]> {
   const supabase = createClient();
   const { data } = await supabase
@@ -36,7 +34,7 @@ export default async function News() {
   const newsPages = await getNewsPages();
 
   const createPagination = (currentPage: number, totalPages: number) => {
-    const delta = 3;
+    const delta = 2;
     const range = [];
     for (
       let i = Math.max(2, currentPage - delta);
