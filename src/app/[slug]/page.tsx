@@ -1,6 +1,7 @@
+import MarkdownPage from "@/components/MarkdownPage/MarkdownPage";
 import { INews } from "@/models/INews";
 import { createClient } from "@/supabase/server";
-import { usePathname } from "next/navigation";
+import { headers } from "next/headers";
 import React from "react";
 
 async function getNews(path: string): Promise<INews | null> {
@@ -15,12 +16,17 @@ async function getNews(path: string): Promise<INews | null> {
 }
 
 export default async function NewsPage() {
-  const path = usePathname();
+  const headersList = headers();
+  const header_url = headersList.get("x-url") || "";
+
+  const path = header_url.split(process.env.NEXT_PUBLIC_URL || "")[1];
   const news = await getNews(path);
 
   return (
     <div>
-      <div>{news?.content}</div>
+      <div>
+        <MarkdownPage source={news?.content || "# 404 | Not found"} />
+      </div>
     </div>
   );
 }

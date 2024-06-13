@@ -1,6 +1,6 @@
 import MarkdownPage from "@/components/MarkdownPage/MarkdownPage";
 import { INews } from "@/models/INews";
-import { createClient } from "@/supabase/client";
+import { createClient } from "@/supabase/server";
 import { headers } from "next/headers";
 import React from "react";
 
