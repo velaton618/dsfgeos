@@ -1,22 +1,26 @@
-"use client";
-
 import MarkdownPage from "@/components/MarkdownPage/MarkdownPage";
-import { getNews } from "@/lib/news";
-import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
 import { INews } from "@/models/INews";
+import { createClient } from "@/supabase/client";
+import { headers } from "next/headers";
+import React from "react";
 
-export default function NewsPage() {
-  const path = usePathname();
-  const [news, setNews] = useState<INews | null>();
+async function getNews(path: string): Promise<INews | null> {
+  const supabase = createClient();
+  const { data } = await supabase.from("news").select("*").eq("path", path);
 
-  useEffect(() => {
-    async function fetch() {
-      setNews(await getNews(path));
-    }
+  if (data) {
+    return data[0];
+  }
 
-    fetch();
-  }, []);
+  return data;
+}
+
+export default async function NewsPage() {
+  const headersList = headers();
+  const header_url = headersList.get("x-url") || "";
+
+  const path = header_url.split(process.env.NEXT_PUBLIC_URL || "")[1];
+  const news = await getNews(path);
 
   return (
     <div>
