@@ -1,4 +1,5 @@
 .container 
+  height: 100vh
   padding-top: 12vh
   display: flex 
   flex-direction: column
@@ -7,8 +8,27 @@
 
   gap: 1rem
 
+  .pagination 
+    display: flex
+    gap: 1rem 
+    max-width: 10vw
+    overflow: auto
+
+    .page
+      .link
+        color: var(--fg)
+        text-decoration: none
+
+        transition: all 0.2s ease-in-out
+        
+        &.active
+          color: var(--primary)
+          font-weight: bold
+
+        &:hover
+          color: var(--fg-dark)
+
   .news
-    height: 100vh
     color: #fff
 
     display: flex
