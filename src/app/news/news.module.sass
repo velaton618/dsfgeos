@@ -1,11 +1,28 @@
-.news
-  height: 100vh
-  color: #fff
+.container 
   padding-top: 12vh
-
-  display: flex
-  justify-content: center
+  display: flex 
+  flex-direction: column
   align-items: center
+  color: var(--fg)
 
-  .new 
-    color: red
+  gap: 1rem
+
+  .news
+    height: 100vh
+    color: #fff
+
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    .new 
+      transition: all 0.3s ease-in-out
+      
+      a
+        color: var(--primary)
+        text-decoration: none
+        transition: all 0.1s ease-in-out
+
+        &:hover 
+          text-decoration: underline
+          color: var(--fg-dark)

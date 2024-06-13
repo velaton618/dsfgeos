@@ -22,11 +22,5 @@ export default async function NewsPage() {
   const path = header_url.split(process.env.NEXT_PUBLIC_URL || "")[1];
   const news = await getNews(path);
 
-  return (
-    <div>
-      <div>
-        <MarkdownPage source={news?.content || "# 404 | Not found"} />
-      </div>
-    </div>
-  );
+  return <MarkdownPage source={news?.content || "# 404 | Not found"} />;
 }

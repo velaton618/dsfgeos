@@ -15,12 +15,15 @@ export default async function News() {
   console.log(news);
 
   return (
-    <div className={s.news}>
-      {news.map((el) => (
-        <div key={el.id} className={s.new}>
-          <a href={el.path}>{el.title}</a>
-        </div>
-      ))}
+    <div className={s.container}>
+      <h1>News</h1>
+      <div className={s.news}>
+        {news.map((el) => (
+          <div key={el.id} className={s.new}>
+            <a href={el.path}>{el.title}</a>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
