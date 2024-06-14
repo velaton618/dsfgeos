@@ -1,4 +1,4 @@
-import MarkdownPage from "@/components/MarkdownPage/MarkdownPage";;
+import MarkdownPage from "@/components/MarkdownPage/MarkdownPage";
 
 const source = `
 # Conferences - GPTS
@@ -27,7 +27,6 @@ const source = `
 **Date**: October 26-29, 2023  
 **Location**: Xuzhou, China  
 **Details**: Development Trend of Transparent Technology for Hidden Disasters in Coal Mines-Key Technologies and Applications of GPTS in Disaster Detection.  
-![Conference Image](/gpts/conferences/3.webp)
 
 ### 2023年矿山安全科技进云南 科技赋能 精准治灾 大地极化激元层析成像技术进云贵受 “热捧”
 
@@ -123,9 +122,7 @@ const source = `
 	`;
 
 function ConferencesGPTS() {
-  return (
-    <MarkdownPage source={source}/>
-  );
+  return <MarkdownPage source={source} />;
 }
 
 export default ConferencesGPTS;
