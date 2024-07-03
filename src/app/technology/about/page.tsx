@@ -14,7 +14,7 @@ DSF-GEOS was formerly known as the Ukrainian special aviation industry multi-sec
 Areas of application of DSF-GEOS know-how：
 Passive source electromagnetic geophysical exploration technology -- GPTS (GeoPolariton Tomographic System)：
 It can be used in mineral resources exploration (deep-sea oil and gas and other mineral resources), engineering geological survey, hydrogeological survey, geothermal geological survey, geotechnical survey, disaster and environmental monitoring and deep space exploration and other fields.
-Combined with the call to encourage the actual policy, only this technology can contribute in deep space exploration, ecological wisdom mines, wisdom cities, science and technology Olympics and many other fields：
+Combined with the call to encourage the actual policy, only this technology can contribute in deep space exploration, ecological wisdom mines, wisdom cities, science and many other fields：
 
 ### 1. Deep space exploration：
 
